@@ -1,11 +1,11 @@
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
-<body>
-    마술 프로그램을 시작합니다. <br />
+<body> -->
+    <!-- 마술 프로그램을 시작합니다. <br />
     1부터 50까지의 숫자를 생각하신 후 준비가 된다면 다음을 클릭하세요<br/>
-    <button id='btnfun1' name = 'btnfun1' onClick = 'location.href="masic_1.php?val=0"'>다음</button>
+    <button id='btnfun1' name = 'btnfun1' onClick = 'location.href="masic_1.php?val=0"'>다음</button> -->
 
     <?php
         ini_set('display_errors', '0');
@@ -15,15 +15,15 @@
         $input_value = substr($input_data, 1, ($input_len-1));
 
         if($input_data == 0){
-            masic_1_page($input_data,0,1);
+            masic_1_page();
         }elseif(substr($input_data,0,1) == 1){
-            masic_2_page($input_data,0,1);
+            masic_2_page($input_value);
         }elseif(substr($input_data,0,1) == 2){
-            masic_3_page($input_data,0,1);
+            masic_3_page($input_value);
         }elseif(substr($input_data,0,1) == 3){
-            masic_4_page($input_data,0,1);
+            masic_4_page($input_value);
         }elseif(substr($input_data,0,1) == 4){
-            masic_5_page($input_data,0,1);
+            masic_5_page($input_value);
         }elseif(substr($input_data,0,1) == 5){
             masic_6_page($input_value);
         }elseif(substr($input_data,0,1) == 6){
@@ -174,5 +174,5 @@
         }
 
     ?>
-</body>
-</html>
+<!-- </body>
+</html> -->
