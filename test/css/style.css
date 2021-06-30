@@ -1,0 +1,18 @@
+body{
+    background-image: url(bgd.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.layer {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+}
+
+
+
+
+
