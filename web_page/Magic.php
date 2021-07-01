@@ -14,14 +14,15 @@
     </head>
    
     <body class = "page_taget">
+    <!-- <h1>당신이 생각한 숫자는?</h1> -->
 
     <div class="change">
-        <h2>
+        
     <pre>
     <?php
-        echo "<br>";
+        //echo "<br>";
         ini_set('display_errors', '0');
-
+    
         $input_data = $_GET["val"];
         $input_len = strlen($input_data);
         $input_value = substr($input_data, 1, ($input_len - 1));
@@ -56,8 +57,9 @@
         {
             $in_count = 0;
             $line_count = 0;
-
+            echo "<h1>";
             echo ($level+1),"단계 하단의 숫자 중 생각하신 숫자가 있으십니까?<br>";
+            echo "<br>";
             $point = pow(2,$level);
 
             for($num = $point; $num < 50; $num++)
@@ -80,6 +82,7 @@
             }
             echo "<br>";
             echo "<br>";
+            echo "</h1>";
             echo "<button id=\"btnfun1\" name=\"btnfun1\ type=\"button\" class=\"btn btn-info\" onClick='location.href=\"magic.php?val=",($level+1),($current_value +$point), "\"'>존재함</button>";
             echo "<button id=\"btnfun2\" name=\"btnfun2\type=\"button\" class=\"btn btn-info\" onClick='location.href=\"magic.php?val=",($level+1),($current_value), "\"'>존재하지 않음</button>";
             
@@ -88,7 +91,7 @@
 
         function result_page($input_value)
         {
-            echo "당신이 생각한 숫자는 ", $input_value, "입니다.";
+            echo "<h1>당신이 생각한 숫자는 ", $input_value, "입니다.</h1>";
             echo "<br>";
             echo "<br>";
             echo "<button id=\"btnfun2\" name=\"btnfun2\type=\"button\" class=\"btn btn-info\"onClick='location.href=\"masic.html\"'>다시하기</button>";
