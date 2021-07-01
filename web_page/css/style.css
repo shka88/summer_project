@@ -1,0 +1,38 @@
+body{
+    background-image: url(bgd.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.layer {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translateX(-50%);
+    text-align: center;
+    
+}
+
+
+.page_taget{
+    position: absolute;
+    left: 50%;
+    top:30%;
+    transform: translateX(-50%);
+    
+    /* width: 50%;
+    height: 50%; */
+}
+
+#btnfun1{
+    width: 100px;
+    margin-right: 20px;
+    
+}
+
+.change{
+    position: absolute;
+    transform: translateX(-50%);
+    text-align: left;
+}
