@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //  count = array('1.jpg','2.jpg','3.jpg','4.jpg','5.jpg');
+        
+        // 이미지 반복적으로 보여주는 프로그램 만들기_(시작, 중지)
+        //Start() 초기값 설정
+        count = 1;
+        var timerId = null;
+
+
+         //  인자로 넘어온 마이크로 초 동안 빈 루프 반복
+        // function sleep(ms){
+        //     const wakeUpTime = Date.now() + ms;
+        //     while(Date.now() < wakeUpTime) {
+        //     console.log(myNum);
+        // }
+
+        // }
+
+        // 첫번째, 이미지 바꾸기 
+        // function changeTo(myImg){
+        //     var myNum = document.getElementById("num");
+        //     myNum.src = myImg;
+           
+
+        // }
+
+         // setTimeout({Auto_change_img('1.jpg')}, 3000);
+
+
+        function Start(){
+            count = Auto_change_img(count);
+            timerId = setTimeout(Start,1000)  // 1초가 지난 후에 Start 출력
+            // 리턴 값을 받는 이유 적용을 취소하는 clearTimeout(timerId)에 사용
+        }
+
+        function Stop(){
+            clearTimeout(timerId);
+        }
+
+        function Auto_change_img(count){
+            var myNum = document.getElementById("num");
+            //myNum.src = myImg;
+            switch(count){
+                case 1:
+                    str = count + ".jpg";
+                    myNum.src = str;
+                    return 2;
+
+                case 2:
+                    str = count + ".jpg";
+                    myNum.src = str;
+                    return 3;
+
+                case 3:
+                    str = count + ".jpg";
+                    myNum.src = str;
+                    return 4;
+
+                case 4:
+                    str = count + ".jpg";
+                    myNum.src = str;
+                    return 5;
+
+                case 5:
+                    str = count + ".jpg";
+                    myNum.src = str;
+                    return 1;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <!-- onclick로 함수연결 -->
+    <form>
+        <!-- <input type="button" value="4로 바꾸기" onclick="changeTo('4.jpg')">
+        <input type="button" value="2로 바꾸기" onclick="changeTo('2.jpg')"> -->
+
+        <input type="button" value="선택" onclick="Start()">
+        <input type="button" value="중지" onclick="Stop()">
+
+    </form>
+
+    <div>
+        <img src="1.jpg" height ="300px" id="num">
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        count = 1;
+        var timerId = null;
+
+        
+        function Rand(min, max){
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min; 
+        }
+
+        function Start(){
+            count1 = Auto_change_img(rand(0,10),"num1");
+            count2 = Auto_change_img(rand(0,10),"num2");
+            count3 = Auto_change_img(rand(0,10),"num3");
+            timerId = setTimeout(Start,1000);  // 1초가 지난 후에 Start 출력
+        }
+
+
+        function Stop(){
+            clearTimeout(timerId);
+        }
+
+        function Auto_change_img(count){
+            myNum = document.getElementById("num");
+            str = count + ".jpg";
+            myNum.src = myImg;
+        }
+
+    </script>
+</head>
+
+<body>
+    
+    <form>
+        <input type="button" value="선택" onclick="Start()">
+        <input type="button" value="중지" onclick="Stop()">
+    </form>
+
+    <div>
+        
+        <img src="1.jpg" height ="300px" id="num1">
+        <img src="2.jpg" height ="300px" id="num2">
+        <img src="3.jpg" height ="300px" id="num3">
+    </div>
+</body>
+</html>
